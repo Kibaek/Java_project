@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="london.dao.ProductDao">
+
+	<resultMap type="Product" id="productMap">
+
+		<id column="dno" property="dno"/>
+		<result column="name" property="name"/>
+		<result column="url" property="url"/>
+		<result column="info" property="info"/>
+		<result column="memo" property="memo"/>
+	</resultMap>
+
+	<sql id="productSelect">
+		SELECT dno, name, url, info, memo
+		FROM dbm
+	</sql>
+
+	<select id="selectList" parameterType="map" resultMap="productMap">
+		<include refid="productSelect"/>
+		<if test="pageSize > 0">
+			limit #{startIndex}, #{pageSize}
+		</if>
+	</select>
+
+	<select id="selectOne" parameterType="int" resultMap="productMap">
+		<include refid="productSelect"/>
+		WHERE dno=#{value}
+	</select>
+
+	<insert id="insert" parameterType="Product">
+		INSERT INTO dbm(name,url,info,memo)
+		VALUES (#{name}, #{url}, #{info}, #{memo})
+	</insert>
+
+  <update id="update" parameterType="Product">
+    UPDATE dbm SET url=#{url}, info=#{info}, memo=#{memo} WHERE dno=#{dno}
+  </update>
+
+	<delete id="delete" parameterType="int">
+		DELETE FROM dbm WHERE dno=#{value}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
