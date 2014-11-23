@@ -46,8 +46,20 @@ public class ProductViewServlet extends GenericServlet {
     out.println("<div class='container'>");
     out.println("<h1>제품 정보</h1>");
     
+    
+    
     out.println("<form class='form-horizontal' role='form' "
         + "action='update' method='post'>");
+    out.println("<div class='form-group'>");
+    out.println("  <div class='col-sm-10' style='display:none'>");
+    out.println("    <input type='text' class='form-control' readonly ");
+    out.println("        id='dno' name='dno' value='" + product.getDno() + "'>");
+    out.println("  </div>");
+    out.println("</div>");
+    
+    
+    
+   
     out.println("<div class='form-group'>");
     out.println("  <label for='name' class='col-sm-2 control-label'>이름</label>");
     out.println("  <div class='col-sm-10'>");
