@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+
+<sql> 태그 사용하기
+ 자주 사용하는 SQL문은 별도로 정의해두고 포함한다.
+ 
+-->
+
+<mapper namespace="java63.assign01.dao.ProductDao">
+	
+	<!-- 객체의 컬럼과 프로퍼티를 연결한다. -->
+	
+	<resultMap type ="Product" id="productMap">
+		<result column="PNO" property="no"/>
+		<result column="PNAME" property="name"/>
+		<result column="QTY" property="quantity"/>
+		<result column="MKNO" property="makerNo"/>
+	</resultMap>
+	
+	<sql id="productSelect">
+	SELECT PNO, PNAME, QTY, MKNO FROM PRODUCTS
+	</sql>
+	
+	<select id="selectList" parameterType="map" resultMap="productMap"> 
+		<include refid="productSelect"/>
+		<if test="pageSize != 0">
+			limit #{startIndex}, #{pageSize}
+		</if>
+	</select>
+
+	<select id="selectOne" parameterType="int" 
+		resultMap="productMap">
+		<include refid="productSelect"/>
+		WHERE PNO=#{value}
+	</select>
+
+	<insert id="insert" parameterType="Product">
+		INSERT INTO PRODUCTS(PNAME,QTY,MKNO)
+		VALUES(#{name}, #{quantity}, #{makerNo}) 
+	</insert>
+
+	<update id="update" parameterType="Product">
+		UPDATE PRODUCTS SET
+		PNAME=#{name},
+		QTY=#{quantity},
+		MKNO=#{makerNo}
+		WHERE PNO=#{no}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+	DELETE FROM PRODUCTS WHERE PNO=#{no}
+	</delete>
+	
+			
+</mapper>
