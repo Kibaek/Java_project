@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class dbmDao {
+public class DbmDao {
   @Autowired
   SqlSessionFactory sqlSessionFactory;
   
@@ -18,9 +18,9 @@ public class dbmDao {
     this.sqlSessionFactory = sqlSessionFactory;
   }
 
-  public dbmDao() {}
+  public DbmDao() {}
 
-  public dbm selectOne(int no) {
+  public Dbm selectOne(int no) {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     
     try {
@@ -32,7 +32,7 @@ public class dbmDao {
     }
   }
   
-  public void update(dbm product) {
+  public void update(Dbm product) {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     try {
       sqlSession.update(
@@ -54,7 +54,7 @@ public class dbmDao {
     }
   }
   
-  public List<dbm> selectList(int pageNo, int pageSize) {
+  public List<Dbm> selectList(int pageNo, int pageSize) {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     
     HashMap<String,Object> paramMap = new HashMap<>();
@@ -71,7 +71,7 @@ public class dbmDao {
     }
   }
   
-  public void insert(dbm product) {
+  public void insert(Dbm product) {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     try {
       sqlSession.insert(

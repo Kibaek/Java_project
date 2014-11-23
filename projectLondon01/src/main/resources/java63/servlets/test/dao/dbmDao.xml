@@ -10,7 +10,7 @@
 <mapper namespace="java02.test19.server.ProductDao">
 
   <!-- 객체의 컬럼과 프로퍼티를 연결한다. -->
-  <resultMap type="Product" id="productMap">
+  <resultMap type="dbm" id="dbmMap">
     <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
     <id column="name" property="name"/>
     <result column="url" property="url"/>
@@ -38,7 +38,7 @@
  
   
   <insert id="insert" parameterType="dbm">
-    INSERT INTO PRODUCTS(name,url,info,memo) 
+    INSERT INTO dbm(name,url,info,memo) 
     VALUES (#{name}, #{url}, #{info}, #{memo})
   </insert>
   
@@ -52,7 +52,7 @@
   </update>
   
   <delete id="delete" parameterType="int">
-    DELETE FROM PRODUCTS WHERE name=#{name}
+    DELETE FROM dbm WHERE name=#{name}
   </delete>
 </mapper>
 

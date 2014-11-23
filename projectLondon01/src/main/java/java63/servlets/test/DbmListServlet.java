@@ -14,7 +14,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/test/dbm/list")
-public class dbmListServlet extends GenericServlet {
+public class DbmListServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
 
   static final int PAGE_DEFAULT_SIZE = 3;
@@ -64,9 +64,9 @@ public class dbmListServlet extends GenericServlet {
     // ProductDao를 ServletContext 보관소에서 꺼내는 방식을 사용
     // => 단점: 위의 방식보다 코드가 늘었다.
     // => 장점: 특정 클래스에 종속되지 않는다. 유지보수에서 더 중요!
-    dbmDao productDao = (dbmDao)this.getServletContext()
+    DbmDao productDao = (DbmDao)this.getServletContext()
                                          .getAttribute("productDao");
-    for (dbm product : productDao.selectList(pageNo, pageSize)) {
+    for (Dbm product : productDao.selectList(pageNo, pageSize)) {
       out.println("<tr>");
       out.println("  <td>" + product.getNo() + "</td>");
       out.println("  <td><a href='view?no=" + product.getNo() + "'>" 

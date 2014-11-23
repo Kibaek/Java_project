@@ -18,7 +18,7 @@ package java63.servlets.test.domain;
 
 import java.io.Serializable;
 
-public class dbm implements Serializable, Cloneable {
+public class Dbm implements Serializable, Cloneable {
   private static final long serialVersionUID = 1L;
   
   protected int       no;
@@ -26,9 +26,9 @@ public class dbm implements Serializable, Cloneable {
   protected int       quantity;
   protected int       makerNo;
   
-  public dbm() {}
+  public Dbm() {}
   
-  public dbm(int no, String name, int quantity, int makerNo) {
+  public Dbm(int no, String name, int quantity, int makerNo) {
     this.no = no;
     this.name = name;
     this.quantity = quantity;
@@ -36,8 +36,8 @@ public class dbm implements Serializable, Cloneable {
   }
 
   @Override
-  public dbm clone() throws CloneNotSupportedException {
-    return (dbm) super.clone();
+  public Dbm clone() throws CloneNotSupportedException {
+    return (Dbm) super.clone();
   }
   
   @Override
@@ -65,7 +65,7 @@ public class dbm implements Serializable, Cloneable {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    dbm other = (dbm) obj;
+    Dbm other = (Dbm) obj;
     if (makerNo != other.makerNo)
       return false;
     if (name == null) {
