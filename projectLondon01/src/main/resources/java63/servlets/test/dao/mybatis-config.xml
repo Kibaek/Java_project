@@ -7,8 +7,8 @@
 
   <!-- SQL 맵퍼 파일에서 사용하기 변하게 클래스 이름에 대해 별명을 붙인다. -->
   <typeAliases>
-    <typeAlias type="java63.servlets.test.domain.dbm" 
-               alias="dbm"/>
+    <typeAlias type="java63.servlets.test.dao.DbmDao" 
+               alias="Dbm"/>
   </typeAliases>
 
   <!-- DBMS 연결 정보 설정 

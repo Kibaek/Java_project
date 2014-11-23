@@ -2,7 +2,7 @@ package java63.servlets.test.dao;
 
 import java.util.HashMap;
 import java.util.List;
-import java63.servlets.test04.domain.Product;
+import java63.servlets.test.domain.Dbm;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -25,7 +25,7 @@ public class DbmDao {
     
     try {
       return sqlSession.selectOne(
-        "java02.test19.server.ProductDao.selectOne", 
+        "java63.servlets.test.dao.DbmDao.selectOne", 
         no /* new Integer(no) */);
     } finally {
       sqlSession.close();
@@ -36,7 +36,7 @@ public class DbmDao {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     try {
       sqlSession.update(
-        "java02.test19.server.ProductDao.update", product);
+        "java63.servlets.test.dao.DbmDao.update", product);
       sqlSession.commit();
     } finally {
       sqlSession.close();
@@ -47,7 +47,7 @@ public class DbmDao {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     try {
       sqlSession.delete(
-        "java02.test19.server.ProductDao.delete", no);
+        "java63.servlets.test.dao.DbmDao.delete", no);
       sqlSession.commit();
     } finally {
       sqlSession.close();
@@ -64,7 +64,7 @@ public class DbmDao {
     try {
       return sqlSession.selectList(
         // 네임스페이스 + SQL문 아이디
-        "java02.test19.server.ProductDao.selectList", 
+        "java63.servlets.test.dao.DbmDao.selectList", 
         paramMap /* SQL문을 실행할 때 필요한 값 전달 */);
     } finally {
       sqlSession.close();
@@ -75,7 +75,7 @@ public class DbmDao {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     try {
       sqlSession.insert(
-        "java02.test19.server.ProductDao.insert", product);
+        "java63.servlets.test.dao.DbmDao.insert", product);
       sqlSession.commit();
     } finally {
       sqlSession.close();
