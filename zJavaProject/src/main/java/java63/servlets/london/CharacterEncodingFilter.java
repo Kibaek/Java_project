@@ -34,8 +34,8 @@ public class CharacterEncodingFilter implements Filter {
     //다음 필터 또는 서블릿의 service()를 실행한 후에 해야할 일
     System.out.println("CharacterEncodingFilter 필터 나가기");
     
+     
   }
-
   @Override
   public void destroy() {}
 

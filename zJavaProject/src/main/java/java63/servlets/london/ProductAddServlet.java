@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/test04/product/add")
+@WebServlet("/london/bookmark/add")
 public class ProductAddServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
 

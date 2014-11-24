@@ -2,6 +2,7 @@ package java63.servlets.london;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java63.servlets.london.dao.ProductDao;
 import java63.servlets.london.domain.Product;
 
@@ -12,8 +13,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/london/bookmark/view")
-public class ProductViewServlet extends GenericServlet {
+//@WebServlet("/test04/product/view")
+public class view_backup extends GenericServlet {
   private static final long serialVersionUID = 1L;
 
   @Override
@@ -58,50 +59,71 @@ public class ProductViewServlet extends GenericServlet {
     out.println("</div>");
     
     
-    
-   
+    out.println("<div class='modal fade' id='viewModal' tabindex='-1' role='dialog'	aria-labelledby='myModalLabel' aria-hidden='true'>");
+  	out.println("	<div class='modal-dialog'>");
+  	out.println("		<div class='modal-content'>");
+  	out.println("			<div class='modal-header'>");
+  	out.println("				<button type='button' class='close' data-dismiss='modal'>");
+  	out.println("					<span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span>");
+  	out.println("				</button>");
+  	out.println("				<h3 class='modal-title' id='myModalLabel'>Bookmark_View</h3>");
+  	out.println("			</div>");
+
+  	out.println("			<div class='modal-body'>");
+
+  	out.println("				<form class='form-horizontal' role='form' action='update'	method='post'>");
+
+  	
+  	
+  	
+  	out.println("<div class='form-group'>");
+    out.println(" <div class='col-sm-10' style='display:none'>");
+    out.println(" <input type='text' class='form-control' readonly ");
+    out.println(" id='dno' name='dno' value='" + product.getDno() + "'>");
+    out.println(" </div>");
+    out.println("</div>");
     out.println("<div class='form-group'>");
-    out.println("  <label for='name' class='col-sm-2 control-label'>이름</label>");
-    out.println("  <div class='col-sm-10'>");
-    out.println("    <input type='text' class='form-control'");
-    out.println("        id='name' name='name' value='" + product.getName() + "'>");
-    out.println("  </div>");
+    out.println(" <label for='name' class='col-sm-2 control-label'>Site_Name</label>");
+    out.println(" <div class='col-sm-10'>");
+    out.println(" <input type='text' class='form-control' readonly ");
+    out.println(" id='name' name='name' value='" + product.getName() + "'>");
+    out.println(" </div>");
     out.println("</div>");
-    
     out.println("<div class='form-group'>");
-    out.println("  <label for='url' class='col-sm-2 control-label'>URL</label>");
-    out.println("  <div class='col-sm-10'>");
-    out.println("    <input type='text' class='form-control' ");
-    out.println("        id='url' name='url' value='" + product.getUrl() + "'>");
-    out.println("  </div>");
+    out.println(" <label for='url' class='col-sm-2 control-label'>URL</label>");
+    out.println(" <div class='col-sm-10'>");
+    out.println(" <input type='text' class='form-control' ");
+    out.println(" id='url' name='url' value='" + product.getUrl() + "'>");
+    out.println(" </div>");
     out.println("</div>");
-    
     out.println("<div class='form-group'>");
-    out.println("  <label for='info' class='col-sm-2 control-label'>정보</label>");
-    out.println("  <div class='col-sm-10'>");
-    out.println("    <input type='text' class='form-control' ");
-    out.println("        id='info' name='info' value='" + product.getInfo() + "'>");
-    out.println("  </div>");
+    out.println(" <label for='info' class='col-sm-2 control-label'>Version</label>");
+    out.println(" <div class='col-sm-10'>");
+    out.println(" <input type='text' class='form-control' ");
+    out.println(" id='info' name='info' value='" + product.getInfo() + "'>");
+    out.println(" </div>");
     out.println("</div>");
-    
     out.println("<div class='form-group'>");
-    out.println("  <label for='memo' class='col-sm-2 control-label'>메모</label>");
-    out.println("  <div class='col-sm-10'>");
-    out.println("   <input type='text' class='form-control' ");
-    out.println("        id='memo' name='memo' value='" + product.getMemo() + "'>");
-    out.println("  </div>");
+    out.println(" <label for='memo' class='col-sm-2 control-label'>Comment</label>");
+    out.println(" <div class='col-sm-10'>");
+    out.println(" <input type='text' class='form-control' ");
+    out.println(" id='memo' name='memo' value='" + product.getMemo() + "'>");
+    out.println(" </div>");
     out.println("</div>");
-    
-    out.println("<div class='form-group'>");
-    out.println("  <div class='col-sm-offset-2 col-sm-10'>");
-    out.println("    <button id='btnUpdate' type='submit' class='btn btn-primary'>변경</button>");
-    out.println("    <button id='btnDelete' type='button' class='btn btn-primary'>삭제</button>");
-    out.println("    <button id='btnCancel' type='button' class='btn btn-primary'>취소</button>");
-    out.println("  </div>");
-    out.println("</div>");
-    
-    out.println("</form>");
-    out.println("</div>");
+  	out.println("				</form>");
+  	out.println("			</div>");
+  	//			<!-- 추가된 부분 -->
+  	out.println("			<form class='form-horizontal' role='form' action='add' method='post'>");
+  	out.println("				<div class='modal-footer'>");
+  	out.println("					<button id='btnUpdate' type='submit' class='btn btn-primary'>Update</button>");
+  	out.println("					<button id='btnDelete' type='button' class='btn btn-primary'>Delete</button>");
+  	out.println("					<button id='btnCancel' type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>");
+  	out.println("				</div>");
+  	out.println("			</form>");
+  	out.println("		</div>");
+  	out.println("	</div>");
+  	out.println("</div>");
+  //<!-- end of View_Modal -->
     
     out.println("<script src='../../js/jquery-1.11.1.js'></script>");
     

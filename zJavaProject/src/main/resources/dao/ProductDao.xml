@@ -37,7 +37,7 @@
 	</insert>
 
   <update id="update" parameterType="Product">
-    UPDATE dbm SET url=#{url}, info=#{info}, memo=#{memo} WHERE dno=#{dno}
+    UPDATE dbm SET name=#{name}, url=#{url}, info=#{info}, memo=#{memo} WHERE dno=#{dno}
   </update>
 
 	<delete id="delete" parameterType="int">
