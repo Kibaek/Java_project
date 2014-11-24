@@ -14,7 +14,7 @@
  * 
  * 6) toString() 오버라이딩
  */
-package java63.servlets.test04.domain;
+package java63.servlets.test05.domain;
 
 import java.io.Serializable;
 

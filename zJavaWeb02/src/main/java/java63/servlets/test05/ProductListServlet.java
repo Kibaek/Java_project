@@ -1,10 +1,10 @@
-package java63.servlets.test04;
+package java63.servlets.test05;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import java63.servlets.test04.dao.ProductDao;
-import java63.servlets.test04.domain.Product;
+import java63.servlets.test05.dao.ProductDao;
+import java63.servlets.test05.domain.Product;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.RequestDispatcher;
@@ -13,7 +13,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/test04/product/list")
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
+@WebServlet("/test05/product/list")
 public class ProductListServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
 
@@ -55,17 +58,13 @@ public class ProductListServlet extends GenericServlet {
     out.println("  <th>#</th><th>제품</th><th>수량</th><th>제조사</th>");
     out.println("</tr>");
     
-    //for (Product product : AppInitServlet.productDao.selectList(pageNo, pageSize)) {
-    //for (Product product : ContextLoaderListener.productDao.selectList(pageNo, pageSize)) {
+    //스프링의 ContextLoaderListener가 준비한 
+    //ApplicationContext 객체 꺼내기
+    ApplicationContext appCtx =
+        WebApplicationContextUtils.getWebApplicationContext(
+            this.getServletContext());
     
-    // ProductDao를 ServletContext 보관소에서 꺼내는 방식을 사용
-    // => 단점: 위의 방식보다 코드가 늘었다.
-    // => 장점: 특정 클래스에 종속되지 않는다. 유지보수에서 더 중요!
-    //ProductDao productDao = (ProductDao)this.getServletContext()
-    //                                     .getAttribute("productDao");
-    
-    ProductDao productDao = (ProductDao) ContextLoaderListener.appCtx
-        .getBean("productDao");
+    ProductDao productDao = (ProductDao)appCtx.getBean("productDao");
     
     for (Product product : productDao.selectList(pageNo, pageSize)) {
       out.println("<tr>");

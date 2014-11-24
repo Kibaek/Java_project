@@ -1,4 +1,4 @@
-package java63.servlets.test04;
+package java63.servlets.test05;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-//@WebServlet("/common/error")
+@WebServlet("/common/error")
 public class ErrorServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
 

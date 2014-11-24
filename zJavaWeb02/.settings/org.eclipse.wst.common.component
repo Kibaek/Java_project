@@ -9,6 +9,12 @@
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.1.2.RELEASE/aff4040103cac2f87fd4d0a88d31d1b62f07fe69/spring-web-4.1.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.1.2.RELEASE/795ed2be08fe84c230d7d7e52e3d159557754a20/spring-jdbc-4.1.2.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
@@ -30,6 +36,9 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.2.8/7b6bf82cea13570b5290d6ed841283a1fcce170/mybatis-3.2.8.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.1.2.RELEASE/700d8435a0cbd0a8efc6a69e6cc886e0730e373f/spring-aop-4.1.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.1.2.RELEASE/89faefb9324a5a0a3ce43ec385f105e45fc2fbed/spring-beans-4.1.2.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
@@ -37,9 +46,6 @@
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.1.2.RELEASE/c23a24c8c237efaaa4f369f4882a8a7d1cb9eeac/spring-tx-4.1.2.RELEASE.jar">
-			<dependency-type>uses</dependency-type>
-		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.1.2.RELEASE/700d8435a0cbd0a8efc6a69e6cc886e0730e373f/spring-aop-4.1.2.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.1.2.RELEASE/da7fc1ba3872802529926a1cbf02cf7176cf2e80/spring-expression-4.1.2.RELEASE.jar">
@@ -54,10 +60,10 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/annotations/2.0.1/9ef6656259841cebfb9fb0697bb122ada4485498/annotations-2.0.1.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Ban/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 	</wb-module>

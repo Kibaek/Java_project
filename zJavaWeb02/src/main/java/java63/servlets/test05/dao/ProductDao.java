@@ -1,8 +1,8 @@
-package java63.servlets.test04.dao;
+package java63.servlets.test05.dao;
 
 import java.util.HashMap;
 import java.util.List;
-import java63.servlets.test04.domain.Product;
+import java63.servlets.test05.domain.Product;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

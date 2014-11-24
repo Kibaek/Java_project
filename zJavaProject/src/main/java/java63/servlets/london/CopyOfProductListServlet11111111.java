@@ -12,8 +12,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/london/bookmark/list")
-public class ProductListServlet extends GenericServlet {
+//@WebServlet("/london/bookmark/list")
+public class CopyOfProductListServlet11111111 extends GenericServlet {
   private static final long serialVersionUID = 1L;
 
   static final int PAGE_DEFAULT_SIZE = 3;
@@ -61,7 +61,7 @@ public class ProductListServlet extends GenericServlet {
     	out.println("<div class='container'>");
     	out.println("	<header>");
     	out.println("	<div id='headline'>");
-    	out.println("		<h1>Bigle</h1>");
+    	out.println("		<h1>BookMark</h1>");
     	out.println("		</div>");
     		//	<!-- Add_Button trigger modal -->
     	
@@ -78,7 +78,7 @@ public class ProductListServlet extends GenericServlet {
     	out.println("<form method=get action='http://www.google.co.kr/search' target='_blank' >");
     	out.println("  <table bgcolor='#FFFFFF'>");
     	out.println("    <tr>");
-    	out.println("      <td><a href='http://www.google.co.kr/'> Search </a>");
+    	out.println("      <td><a href='http://www.google.co.kr/'> 구글구글 </a>");
     	out.println("          <input type=text name=q size=50 maxlength=255 value='' />");
     	out.println("          <input type=hidden name=ie value=utf-8 />");
     	out.println("          <input type=hidden name=oe value=utf-8 />");
