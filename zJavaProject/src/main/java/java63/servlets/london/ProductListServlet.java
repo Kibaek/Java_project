@@ -97,7 +97,7 @@ public class ProductListServlet extends GenericServlet {
     	for (Product product : productDao.selectList(pageNo, pageSize)) {
     		
     	out.println("		<div class='boxList'>");
-    	out.println("			<div class='box' onclick=\"location.href='" + product.getUrl() + "'\" style='cursor:pointer;' onmouseover=\"showLayer('show')\">");
+    	out.println("			<div class='box' onclick=\"location.href='" + product.getUrl() + "'\" style='cursor:pointer;' \">");
     	out.println("				<h2>" +  product.getName()  + " </h2>");
     	out.println("			</div>");
     	out.println("			<div class='boxDetail'>");

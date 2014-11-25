@@ -1,8 +1,7 @@
 package java63.servlets.test05;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
+import java.util.List;
 import java63.servlets.test05.dao.ProductDao;
 import java63.servlets.test05.domain.Product;
 
@@ -25,7 +24,6 @@ public class ProductListServlet extends GenericServlet {
   @Override
   public void service(ServletRequest request, ServletResponse response)
       throws ServletException, IOException {
-    System.out.println("service() 실행 시작");
     int pageNo = 0;
     int pageSize = 0;
     
@@ -38,26 +36,6 @@ public class ProductListServlet extends GenericServlet {
       pageSize = Integer.parseInt(request.getParameter("pageSize"));
     }
     
-    response.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = response.getWriter();
-    out.println("<html>");
-    out.println("<head>");
-    
-    // 다른 서블릿을 실행 => 실행 후 제어권이 되돌아 온다.
-    RequestDispatcher rd = 
-        request.getRequestDispatcher("/common/header");
-    rd.include(request, response);
-    
-    out.println("</head>");
-    out.println("<body>");
-    out.println("<div class='container'>");
-    out.println("<h1>제품 목록</h1>");
-    out.println("<p><a href='product-form.html' class='btn btn-primary'>새제품</a></p>");
-    out.println("<table class='table table-hover'>");
-    out.println("<tr>");
-    out.println("  <th>#</th><th>제품</th><th>수량</th><th>제조사</th>");
-    out.println("</tr>");
-    
     //스프링의 ContextLoaderListener가 준비한 
     //ApplicationContext 객체 꺼내기
     ApplicationContext appCtx =
@@ -65,29 +43,16 @@ public class ProductListServlet extends GenericServlet {
             this.getServletContext());
     
     ProductDao productDao = (ProductDao)appCtx.getBean("productDao");
+    List<Product> products = productDao.selectList(pageNo, pageSize);
+    request.setAttribute("products", products);
     
-    for (Product product : productDao.selectList(pageNo, pageSize)) {
-      out.println("<tr>");
-      out.println("  <td>" + product.getNo() + "</td>");
-      out.println("  <td><a href='view?no=" + product.getNo() + "'>" 
-            + product.getName() + "</a></td>");
-      out.println("  <td>" + product.getQuantity() + "</td>");
-      out.println("  <td>" + product.getMakerNo() + "</td>");
-      out.println("</tr>");
-    }
-    out.println("</table>");
-    out.println("</div>");
+    // include를 수행할 때는 여기에서 콘텐츠 타입을 설정해야 한다.
+    response.setContentType("text/html;charset=UTF-8");
     
-    out.println("<script src='../../js/jquery-1.11.1.js'></script>");
-    
-    
-    // 다른 서블릿을 실행 => 실행 후 제어권이 되돌아 온다.
-    rd = request.getRequestDispatcher("/common/footer");
+    // 결과를 출력하기 위해 JSP에게 위임한다.
+    RequestDispatcher rd = request.getRequestDispatcher(
+        "/test05/product/ProductList.jsp");
     rd.include(request, response);
-    
-    out.println("</body>");
-    out.println("</html>");
-    System.out.println("service() 실행 완료");
   }
   
 }
