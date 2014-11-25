@@ -1,19 +1,14 @@
 @CHARSET "UTF-8";
 
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+
 body {
-	background-image: url("http://blogfiles.naver.net/20141124_247/banga2011_1416822549207VhVE1_JPEG/%BA%F1%B1%DB.jpg") ;
+	font-family: 'Hanna','Gulim';
+	color: #666;
+	background-image: url("../img/bigle.jpg") ;
 	background-repeat:no-repeat;
 	background-size : 100% 100%;
-}
-.h1 {
-	font-weight: border;
-	font-size: 400%;
-
-}
-
-.h2 {
-	font-weight: border;
-	
 }
 
 .container {
@@ -26,11 +21,11 @@ body {
 }
 
 .boxWrapper {
-	margin-top: 20px;
+	margin-top: 160px;
 	text-align: center;
 	position: absolute;
 	top: 80px;
-	width: 90%;
+	width: 100%;
 	height: 90%;
 	overflow: visible;
 }
@@ -52,9 +47,15 @@ body {
 	position: relative;
 }
 .box:hover {
-	-moz-box-shadow: 0 0 10px #ccc;
-	-webkit-box-shadow: 0 0 10px #ccc;
-	box-shadow: 0 0 10px #ccc;
+	-moz-box-shadow: 0 0 10px #bbb;
+	-webkit-box-shadow: 0 0 10px #bbb;
+	box-shadow: 0 0 10px #bbb;
+	color: black;
+	-webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+    -ms-transform: scale(1.1,1.1);
+    transform: scale(1.1,1.1);
 }
 
 .boxList {
@@ -70,8 +71,9 @@ body {
 	z-index: 100;
 }
 #headline {
-	float: left;
-	display: inline;
+	padding-top: 30px;
+	width: 100%;
+	text-align: center;
 }
 #add {
 	margin-top: 20px;

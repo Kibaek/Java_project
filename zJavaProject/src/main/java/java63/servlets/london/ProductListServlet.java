@@ -61,14 +61,12 @@ public class ProductListServlet extends GenericServlet {
     	out.println("<div class='container'>");
     	out.println("	<header>");
     	out.println("	<div id='headline'>");
-    	out.println("		<h1>Bigle</h1>");
+    	out.println("<img src='https://pbs.twimg.com/profile_images/425962153103745024/9XJste4m.jpeg' width=200px>");
     	out.println("		</div>");
     		//	<!-- Add_Button trigger modal -->
     	
     	
-    	out.println("		<div id='add'>");
-    	out.println("		<button type='button' class='btn btn-primary btn-sm'	data-toggle='modal' data-target='#myModal'>Add_BM</button>");
-    	out.println("			</div>");
+    	
     	out.println("	</header>");
 
     	
@@ -78,12 +76,12 @@ public class ProductListServlet extends GenericServlet {
     	out.println("<form method=get action='http://www.google.co.kr/search' target='_blank' >");
     	out.println("  <table bgcolor='#FFFFFF'>");
     	out.println("    <tr>");
-    	out.println("      <td><a href='http://www.google.co.kr/'> Search </a>");
-    	out.println("          <input type=text name=q size=50 maxlength=255 value='' />");
+    	out.println("      <td>");
+    	out.println("          <input type=text name=q size=50 maxlength=255 style='text-align:center' placeholder='검색어를 입력하세요!' />");
     	out.println("          <input type=hidden name=ie value=utf-8 />");
     	out.println("          <input type=hidden name=oe value=utf-8 />");
     	out.println("          <input type=hidden name=hl value=utf-8 />");
-    	out.println("          <input type=submit name=btnG value='Google 연동검색' />");
+    	out.println("          <input type=submit name=btnG value='Search' />");
     	out.println("      </td>");
     	out.println("    </tr>");
     	out.println("  </table>");
@@ -108,10 +106,12 @@ public class ProductListServlet extends GenericServlet {
     			
     	}
     	
-
+    	out.println("		<div class='boxList' height=250px>");
+    	out.println("		<button type='button' class='btn btn-primary btn-sm'	data-toggle='modal' data-target='#myModal'>+</button>");
+    	out.println("			</div>");
     	out.println("	</div>");
     	//	<!-- end of boxWrapper -->
-    	//out.println("</div>");
+    	out.println("</div>");
     	// <!-- end of container -->
 
     //<!-- Add_Modal -->
